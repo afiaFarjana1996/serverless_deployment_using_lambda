@@ -1,0 +1,16 @@
+{
+  "name": "test_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --exit",
+    "start": "node app.js"
+  },
+  "author": "afia",
+  "license": "ISC",
+  "dependencies": {
+    "serverless-mocha-plugin": "^1.11.0",
+    "uuid": "^3.4.0"
+  }
+}

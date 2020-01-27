@@ -1,0 +1,51 @@
+service: sls
+
+custom:
+    settings:
+        TABLE_NAME: Customer
+
+provider:
+    name: aws
+    runtime: nodejs12.x
+    region: us-east-2
+    environment: ${self:custom.settings}
+    iamRoleStatements:
+        - Effect: "Allow"
+          Action:
+            - dynamodb:DescribeTable
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+          Resource:
+            - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.settings.TABLE_NAME}"
+functions:
+    createGet:
+        handler: handler/getCustomerData.getCustomer
+        events:
+        - http:
+           path: /customers/{customerId}
+           method: get
+           cors: true
+    createPost:
+        handler: handler/postCustomerData.createCustomer
+        events:
+        - http:
+            path: /customers
+            method: post
+            cors: true
+    
+resources:
+    Resources:
+        CustomerTable:
+            Type: AWS::DynamoDB::Table 
+            Properties:
+                TableName: ${self:custom.settings.TABLE_NAME}
+                AttributeDefinitions:
+                - AttributeName: "customerId"
+                  AttributeType: "S"
+                KeySchema:
+                - AttributeName: "customerId"
+                  KeyType: "HASH"
+                ProvisionedThroughput:
+                  ReadCapacityUnits: 1
+                  WriteCapacityUnits: 1

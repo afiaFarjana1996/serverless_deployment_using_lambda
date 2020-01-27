@@ -1,0 +1,87 @@
+swagger: '2.0'
+info:
+  description: This is API definition
+  version: 1.0.0
+  title: Customer API
+  # put the contact info for your development or API team
+  contact:
+    email: afia.farjana@smoothstack.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+paths:
+  /customers/{customerId}:
+    get:
+      summary: searches customer
+      description: |
+        By passing customerId as path parameter in api, we can retrieve customer record from the database.
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: customerId
+        description: pass a search string for looking up customer information
+        required: true
+        type: string
+      responses:
+        200:
+          description: search results match
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/CustomerItem'
+        404:
+          description: customer not found.
+  
+  /customers :
+    post:
+      description: Add a customer to the database.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: customer
+        description: customer to add
+        schema:
+          $ref: '#/definitions/CustomerItem'
+      responses:
+        201:
+          description: customer created
+        400:
+          description: invalid input, object invalid
+definitions:
+  CustomerItem:
+    type: object
+    required:
+    - customerId
+    - fisrtName
+    - lastName
+    - address
+    - email
+    properties:
+      customerId:
+        type: string
+        format: uuid
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      fisrtName:
+        type: string
+        example: Afia
+      lastName:
+        type: string
+        example: Farjana
+      address:
+        type: string
+        example: addressX
+      email:
+        type: string
+        example: customer@gmail.com
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /afiaFarjana1996/Customer/1.0.0
+schemes:
+ - https
+ - http
