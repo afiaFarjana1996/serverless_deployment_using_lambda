@@ -1,7 +1,6 @@
 const chai  = require('chai');
 const expect = chai.expect;
 const getCustomerClass = require('../handlers/getCustomerData');
-const table_name = process.env.TABLE_NAME ;
  
 describe('getRecord', () => {
  
@@ -29,10 +28,8 @@ describe('getRecord', () => {
         
       getCustomerClass.getCustomer(event,done)
         .then( res =>{
-            console.log("response: "+res.statusCode+" "+res.body);
             expect(res.statusCode).to.equal(200);
-            //expect(JSON.parse(res.body)).to.deep.equal(actualResponseBody);
-            console.log("response: a"+res.statusCode+" "+res.body);
+            expect(JSON.parse(res.body)).to.deep.equal(actualResponseBody);
         })
         .catch(err => console.log("Error is: "+err))
         .finally(done)
