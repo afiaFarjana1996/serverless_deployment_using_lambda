@@ -186,7 +186,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sls/dev/1580088307914-2020-01-27T01:25:07.914Z/sls.zip"
+                "S3Key": "serverless/sls/dev/1580240650303-2020-01-28T19:44:10.303Z/sls.zip"
               },
               "FunctionName": "sls-dev-createGet",
               "Handler": "handler/getCustomerData.getCustomer",
@@ -210,14 +210,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateGetLambdaVersionlogBIZxYSdH7QfGANE6mHRIgheAnTJO0ZaBo4uURos": {
+          "CreateGetLambdaVersionEJ7TQI323bGEGQBSSmk1CqYz9LXb9RcxhdgTv2Ss5K0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateGetLambdaFunction"
               },
-              "CodeSha256": "nXIBbOFrPpNzy9c5yf4dCcMxUmSZNriOYZr+lU03gs4="
+              "CodeSha256": "ewrLPYtVBF8nTLnjV0WE/THB0jQgKgyWqsdGojYj08k="
             }
           },
           "CreatePostLambdaFunction": {
@@ -227,7 +227,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sls/dev/1580088307914-2020-01-27T01:25:07.914Z/sls.zip"
+                "S3Key": "serverless/sls/dev/1580240650303-2020-01-28T19:44:10.303Z/sls.zip"
               },
               "FunctionName": "sls-dev-createPost",
               "Handler": "handler/postCustomerData.createCustomer",
@@ -251,14 +251,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreatePostLambdaVersionE9yufOmQ1XYppjfT7T8CeSbiaA3CsXwtmb0IKDx5yE": {
+          "CreatePostLambdaVersionKi2Bd5NZgxSic0C1304DIiFhpdL9gTnaXkIutJJXGs": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreatePostLambdaFunction"
               },
-              "CodeSha256": "nXIBbOFrPpNzy9c5yf4dCcMxUmSZNriOYZr+lU03gs4="
+              "CodeSha256": "ewrLPYtVBF8nTLnjV0WE/THB0jQgKgyWqsdGojYj08k="
             }
           },
           "ApiGatewayRestApi": {
@@ -476,7 +476,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1580088306233": {
+          "ApiGatewayDeployment1580240643508": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -597,13 +597,13 @@
           "CreateGetLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateGetLambdaVersionlogBIZxYSdH7QfGANE6mHRIgheAnTJO0ZaBo4uURos"
+              "Ref": "CreateGetLambdaVersionEJ7TQI323bGEGQBSSmk1CqYz9LXb9RcxhdgTv2Ss5K0"
             }
           },
           "CreatePostLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreatePostLambdaVersionE9yufOmQ1XYppjfT7T8CeSbiaA3CsXwtmb0IKDx5yE"
+              "Ref": "CreatePostLambdaVersionKi2Bd5NZgxSic0C1304DIiFhpdL9gTnaXkIutJJXGs"
             }
           },
           "ServiceEndpoint": {
@@ -743,7 +743,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "CreateGetLambdaVersionlogBIZxYSdH7QfGANE6mHRIgheAnTJO0ZaBo4uURos"
+        "versionLogicalId": "CreateGetLambdaVersionEJ7TQI323bGEGQBSSmk1CqYz9LXb9RcxhdgTv2Ss5K0"
       },
       "createPost": {
         "handler": "handler/postCustomerData.createCustomer",
@@ -781,7 +781,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "CreatePostLambdaVersionE9yufOmQ1XYppjfT7T8CeSbiaA3CsXwtmb0IKDx5yE"
+        "versionLogicalId": "CreatePostLambdaVersionKi2Bd5NZgxSic0C1304DIiFhpdL9gTnaXkIutJJXGs"
       }
     },
     "resources": {
@@ -817,7 +817,7 @@
     "artifact": "/Users/afia/Documents/node_practice/.serverless/sls.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/sls/dev/1580088307914-2020-01-27T01:25:07.914Z",
+    "artifactDirectoryName": "serverless/sls/dev/1580240650303-2020-01-28T19:44:10.303Z",
     "artifact": "sls.zip"
   }
 }

@@ -1,5 +1,5 @@
 service: sls
-
+Transform: 'AWS::Serverless-2016-10-31'
 custom:
     settings:
         TABLE_NAME: Customer

@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  description: This is API definition
+  description: This is API definition for Customer api
   version: 1.0.0
   title: Customer API
   # put the contact info for your development or API team
@@ -34,6 +34,8 @@ paths:
               $ref: '#/definitions/CustomerItem'
         404:
           description: customer not found.
+        500:
+          description: Internal Server Error.
   
   /customers :
     post:
@@ -53,6 +55,8 @@ paths:
           description: customer created
         400:
           description: invalid input, object invalid
+        500:
+          description: Internal Server Error.
 definitions:
   CustomerItem:
     type: object
