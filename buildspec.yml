@@ -5,11 +5,13 @@ phases:
     runtime-versions:
        nodejs: 12
     commands:
-       - npm install
+       - npm install --no-progress --silent
        - npm install -g serverless
        
   
   build:
     commands:
+       - npm run-script lint
+       - npm run test
        - aws cloudformation package --template-file serverless.yml --s3-bucket sls-dev-serverlessdeploymentbucket-385sagfyfitn --output-template-file compiled-cloudformation-template.json
        
